@@ -36,7 +36,7 @@ const AddCommentForm = ({ onSubmit }) => {
         const isValid = validate();
         if (!isValid) return;
         onSubmit(data);
-        console.log(data);
+        console.log("data_addComment:", data);
         clearForm();
     };
 

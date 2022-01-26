@@ -20,8 +20,9 @@ const Comments = () => {
     const isLoading = useSelector(getCommentsLoadingStatus());
 
     const comments = useSelector(getComments());
-    const handleSubmit = (data) => {
-        dispatch(createComment({ data, pageId: userId }));
+    const handleSubmit = ({ content }) => {
+        console.log("data_handleSubmit:", { content });
+        dispatch(createComment({ content: content, pageId: userId }));
     };
     const handleRemoveComment = (id) => {
         dispatch(removeComment(id));
